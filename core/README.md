@@ -2,7 +2,7 @@
 
 > **Proyectos fundamentales de Elm**
 
-Directorio que agrupa los proyectos base organizados por nivel de dificultad. Actualmente contiene la carpeta [`foundations/`](foundations/), con los proyectos introductorios del lenguaje.
+Directorio que agrupa los proyectos base organizados por nivel de dificultad. Contiene la carpeta [`foundations/`](foundations/), con los proyectos introductorios del lenguaje, y la carpeta [`algorithms/`](algorithms/), con los algoritmos puros de la Fase 1.
 
 ---
 
@@ -11,6 +11,7 @@ Directorio que agrupa los proyectos base organizados por nivel de dificultad. Ac
 | Directorio | Descripción |
 |------------|-------------|
 | [`foundations/`](foundations/) | Proyectos fundamentales: Hello World, Hello User, Calculator, Numbers |
+| [`algorithms/`](algorithms/) | Algoritmos puros: Naive Sort (selection, bubble, insertion) |
 
 Cada proyecto incluye su propio `README.md` con instrucciones detalladas de compilación, ejecución y pruebas.
 
@@ -21,10 +22,12 @@ Cada proyecto incluye su propio `README.md` con instrucciones detalladas de comp
 ```mermaid
 graph TD
     core --> foundations
+    core --> algorithms
     foundations --> helloworld
     foundations --> hellouser
     foundations --> unit_test
     foundations --> numbers
+    algorithms --> naive_sort
 ```
 
 ---
