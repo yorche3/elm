@@ -14,12 +14,14 @@ elm/
 ├── LICENSE                # GNU GPL v3
 ├── .gitignore             # elm-stuff, repl-temp-*
 └── core/
-    └── foundations/       # Proyectos fundamentales
-        ├── helloworld/    # Hello, World! — Platform.worker + Debug.log
-        ├── hellouser/     # Hello, User! — Ports + Node.js I/O
-        ├── unit_test/
-        │   └── calculator/  # Calculadora — elm-test + let...in
-        └── numbers/       # 15 funciones — Rec / Acc / Ite
+    ├── foundations/       # Proyectos fundamentales
+    │   ├── helloworld/    # Hello, World! — Platform.worker + Debug.log
+    │   ├── hellouser/     # Hello, User! — Ports + Node.js I/O
+    │   ├── unit_test/
+    │   │   └── calculator/  # Calculadora — elm-test + let...in
+    │   └── numbers/       # 15 funciones — Rec / Acc / Ite
+    └── algorithms/        # Algoritmos puros
+        └── naive_sort/    # Selection / Bubble / Insertion — elm-test
 ```
 
 ---
@@ -32,6 +34,7 @@ elm/
 | Hello User | [`core/foundations/hellouser/`](core/foundations/hellouser/) | `port module`, E/S con Node.js, `Cmd`/`Sub` | ✅ Completado |
 | Calculator | [`core/foundations/unit_test/calculator/`](core/foundations/unit_test/calculator/) | `elm-test`, funciones internas `let ... in`, aritmética recursiva | ✅ Completado |
 | Numbers | [`core/foundations/numbers/`](core/foundations/numbers/) | Recursión pura, tail recursion, funciones internas, GCD/LCM | ✅ Completado |
+| Naive Sort | [`core/algorithms/naive_sort/`](core/algorithms/naive_sort/) | Pattern matching sobre listas, recursión estructural, bandera `swapped` como valor de retorno | ✅ Completado |
 
 ---
 
@@ -77,6 +80,13 @@ cd core/foundations/numbers
 elm-test
 ```
 
+### Naive Sort (tests)
+
+```bash
+cd core/algorithms/naive_sort
+elm-test
+```
+
 ---
 
 ## 📚 Conceptos de Elm cubiertos
@@ -88,6 +98,8 @@ elm-test
 - **`let ... in`** — expresiones locales y funciones helper internas
 - **Tail recursion** — optimización de llamada de cola con acumuladores
 - **`elm-test`** — pruebas unitarias con `Test`, `Expect`, `describe`
+- **Pattern matching sobre listas** — `[]` y `first :: rest` para separar casos base y recursivos
+- **Tuplas como retorno múltiple** — `(List Int, Bool)` para devolver lista y bandera
 - **Anotaciones de tipo** — tipado estático explícito
 
 ---
