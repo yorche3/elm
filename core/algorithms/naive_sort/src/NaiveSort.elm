@@ -1,8 +1,7 @@
 module NaiveSort exposing (
     selectionSort,
     bubbleSort,
-    insertionSort
-)
+    insertionSort)
 
 {-| Selection sort algorithm.
 Input: A list of integers.
