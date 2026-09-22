@@ -3,7 +3,7 @@ module NaiveSort exposing (
     bubbleSort,
     insertionSort)
 
-{-| Selection sort algorithm.
+{- Selection sort algorithm.
 Input: A list of integers.
 Output: A list of integers sorted in ascending order.
 -}
@@ -19,7 +19,7 @@ selectionSort list =
             in
             minIdx :: selectionSort remaining
 
-{-| Pick the minimum element from a list.
+{- Pick the minimum element from a list.
 Input: The current minimum value and the rest of the list.
 Output: A tuple containing the minimum value and the remaining list after removing the minimum.
 -}
@@ -41,7 +41,7 @@ pickMin minVal list =
                 in
                 (newMin, first :: remaining)
 
-{-| Bubble sort algorithm.
+{- Bubble sort algorithm.
 Input: A list of integers.
 Output: A list of integers sorted in ascending order.
 -}
@@ -60,7 +60,7 @@ bubbleSort list =
             else
                 sorted
 
-{-| Perform a single pass of bubble sort.
+{- Perform a single pass of bubble sort.
 Input: A list of integers.
 Output: A tuple containing the list after one pass and a boolean indicating if any swaps were made.
 -}
@@ -85,7 +85,7 @@ bubblePass list =
                 in
                 (first :: newRest, swapped)
 
-{-| Insertion sort algorithm.
+{- Insertion sort algorithm.
 Input: A list of integers.
 Output: A list of integers sorted in ascending order.
 -}
@@ -98,7 +98,7 @@ insertionSort list =
         first :: rest ->
             insert first (insertionSort rest)
 
-{-| Insert an element into a sorted list.
+{- Insert an element into a sorted list.
 Input: An integer and a sorted list of integers.
 Output: A new sorted list with the integer inserted.
 -}
