@@ -1,26 +1,22 @@
 module DataStructuresBasics exposing
-    ( Node
-    , LinkedList
-    , Stack
-    , Queue
-    , nodeInit
-    , nodeGetValue
-    , nodeGetNext
-    , nodeSetNext
-    , linkedListInit
-    , linkedListGetHead
+    ( Node(..)
+    , LinkedList(..)
+    , Stack(..)
+    , Queue(..)
+    , emptyLinkedList
+    , linkedListHead
     , linkedListInsertHead
     , linkedListInsertTail
     , linkedListDelete
     , linkedListIsEmpty
     , linkedListSize
-    , stackInit
+    , emptyStack
     , stackPush
     , stackPop
     , stackPeek
     , stackIsEmpty
     , stackSize
-    , queueInit
+    , emptyQueue
     , queueEnqueue
     , queueDequeue
     , queuePeek
@@ -28,66 +24,57 @@ module DataStructuresBasics exposing
     , queueSize
     )
 
-
 type Node
-    = Node
+    = Node Int (Maybe Node)
 
 
 type LinkedList
-    = LinkedList
+    = LinkedList (Maybe Node) (Maybe Node) Int
 
 
 type Stack
-    = Stack
+    = Stack (Maybe Node) Int
 
 
 type Queue
-    = Queue
+    = Queue (Maybe Node) (Maybe Node) Int
 
 
-nodeInit : Int -> Node
-nodeInit _ =
-    Node
+-- LINKED LIST --------------------------------------------------------------
+
+{-| Empty list; this is `init()` in the specification.
+-}
+emptyLinkedList : LinkedList
+emptyLinkedList =
+    LinkedList Nothing Nothing 0
 
 
-nodeGetValue : Node -> Int
-nodeGetValue _ =
-    -1
+{-| Head value, or `Nothing` on an empty list.
+-}
+linkedListHead : LinkedList -> Maybe Int
+linkedListHead _ =
+    Nothing
 
 
-nodeGetNext : Node -> Node
-nodeGetNext _ =
-    Node
-
-
-nodeSetNext : Node -> Node -> Node
-nodeSetNext _ _ =
-    Node
-
-
-linkedListInit : LinkedList
-linkedListInit =
-    LinkedList
-
-
-linkedListGetHead : LinkedList -> Int
-linkedListGetHead _ =
-    -1
-
-
+{-| Insert at the front.
+-}
 linkedListInsertHead : Int -> LinkedList -> LinkedList
-linkedListInsertHead _ _ =
-    LinkedList
+linkedListInsertHead _ list =
+    list
 
 
+{-| Insert at the back.
+-}
 linkedListInsertTail : Int -> LinkedList -> LinkedList
-linkedListInsertTail _ _ =
-    LinkedList
+linkedListInsertTail _ list =
+    list
 
 
-linkedListDelete : Int -> LinkedList -> ( LinkedList, Bool )
+{-| Remove the first occurrence; `Nothing` when the value is absent.
+-}
+linkedListDelete : Int -> LinkedList -> Maybe LinkedList
 linkedListDelete _ _ =
-    ( LinkedList, False )
+    Nothing
 
 
 linkedListIsEmpty : LinkedList -> Bool
@@ -97,27 +84,35 @@ linkedListIsEmpty _ =
 
 linkedListSize : LinkedList -> Int
 linkedListSize _ =
-    -1
+    0
 
 
-stackInit : Stack
-stackInit =
-    Stack
+-- STACK --------------------------------------------------------------------
+
+{-| Empty stack; this is `init()` in the specification.
+-}
+emptyStack : Stack
+emptyStack =
+    Stack Nothing 0
 
 
 stackPush : Int -> Stack -> Stack
-stackPush _ _ =
-    Stack
+stackPush _ stack =
+    stack
 
 
-stackPop : Stack -> ( Stack, Int )
+{-| Remove and return the top; `Nothing` on an empty stack.
+-}
+stackPop : Stack -> Maybe ( Int, Stack )
 stackPop _ =
-    ( Stack, -1 )
+    Nothing
 
 
-stackPeek : Stack -> Int
+{-| Observe the top without removing it; `Nothing` on an empty stack.
+-}
+stackPeek : Stack -> Maybe Int
 stackPeek _ =
-    -1
+    Nothing
 
 
 stackIsEmpty : Stack -> Bool
@@ -127,27 +122,35 @@ stackIsEmpty _ =
 
 stackSize : Stack -> Int
 stackSize _ =
-    -1
+    0
 
 
-queueInit : Queue
-queueInit =
-    Queue
+-- QUEUE --------------------------------------------------------------------
+
+{-| Empty queue; this is `init()` in the specification.
+-}
+emptyQueue : Queue
+emptyQueue =
+    Queue Nothing Nothing 0
 
 
 queueEnqueue : Int -> Queue -> Queue
-queueEnqueue _ _ =
-    Queue
+queueEnqueue _ queue =
+    queue
 
 
-queueDequeue : Queue -> ( Queue, Int )
+{-| Remove and return the front; `Nothing` on an empty queue.
+-}
+queueDequeue : Queue -> Maybe ( Int, Queue )
 queueDequeue _ =
-    ( Queue, -1 )
+    Nothing
 
 
-queuePeek : Queue -> Int
+{-| Observe the front without removing it; `Nothing` on an empty queue.
+-}
+queuePeek : Queue -> Maybe Int
 queuePeek _ =
-    -1
+    Nothing
 
 
 queueIsEmpty : Queue -> Bool
@@ -157,4 +160,4 @@ queueIsEmpty _ =
 
 queueSize : Queue -> Int
 queueSize _ =
-    -1
+    0
