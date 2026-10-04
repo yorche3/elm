@@ -51,9 +51,9 @@ emptyLinkedList =
 
 {-| Head value, or `Nothing` on an empty list.
 -}
-linkedListHead : LinkedList -> Maybe Int
+linkedListHead : LinkedList -> Int
 linkedListHead _ =
-    Nothing
+    0
 
 
 {-| Insert at the front.
@@ -110,9 +110,9 @@ stackPop _ =
 
 {-| Observe the top without removing it; `Nothing` on an empty stack.
 -}
-stackPeek : Stack -> Maybe Int
+stackPeek : Stack -> Int
 stackPeek _ =
-    Nothing
+    0
 
 
 stackIsEmpty : Stack -> Bool
@@ -148,9 +148,9 @@ queueDequeue _ =
 
 {-| Observe the front without removing it; `Nothing` on an empty queue.
 -}
-queuePeek : Queue -> Maybe Int
+queuePeek : Queue -> Int
 queuePeek _ =
-    Nothing
+    0
 
 
 queueIsEmpty : Queue -> Bool
