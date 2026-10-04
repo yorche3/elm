@@ -11,7 +11,7 @@ Directorio que agrupa los proyectos base organizados por nivel de dificultad. Co
 | Directorio | Descripción |
 |------------|-------------|
 | [`foundations/`](foundations/) | Proyectos fundamentales: Hello World, Hello User, Calculator, Numbers |
-| [`algorithms/`](algorithms/) | Algoritmos puros: Naive Sort (selection, bubble, insertion) |
+| [`algorithms/`](algorithms/) | Algoritmos puros: Naive Sort (selection, bubble, insertion), Data Structures Basics (LinkedList, Stack, Queue) |
 
 Cada proyecto incluye su propio `README.md` con instrucciones detalladas de compilación, ejecución y pruebas.
 
@@ -28,6 +28,7 @@ graph TD
     foundations --> unit_test
     foundations --> numbers
     algorithms --> naive_sort
+    algorithms --> data_structures_basics
 ```
 
 ---
