@@ -83,7 +83,7 @@ import Debug
 main : Program () () ()
 main =
     let
-        _ = Debug.log "Hello, World! from Elm" ()
+        _ = Debug.log "Hello, World! from Elm!" ()
     in
     Platform.worker
         { init = \() -> ( (), Cmd.none )
