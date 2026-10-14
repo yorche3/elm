@@ -104,6 +104,10 @@ main =
 
 **EN:** Loads the compiled JavaScript (`hello.js`) in a Node.js context and initializes the Elm program.
 
+**ES:** Tanto `hello.js` (salida de `elm make`) como la caché `elm-stuff/` son artefactos de compilación: figuran en el `.gitignore` del módulo y no se versionan.
+
+**EN:** Both `hello.js` (the output of `elm make`) and the `elm-stuff/` cache are build artifacts: they are listed in the module's `.gitignore` and are not versioned.
+
 ```javascript
 const fs = require('fs');
 const vm = require('vm');
