@@ -30,7 +30,7 @@ Exporta **15 funciones** públicas organizadas en 3 familias (5 funciones × 3 v
 
 ---
 
-## 🧠 Paradigmas explicados
+## 🛠️ Enfoque y construcción / Approach & Build
 
 ### 1. `*Rec` — Recursivo puro
 
@@ -150,7 +150,7 @@ elm-test
 
 ---
 
-## 🚀 Uso
+## 🚀 Compilación y ejecución / Build & Run
 
 ```elm
 import Numbers exposing (..)
@@ -164,7 +164,7 @@ leastCommonMultipleAcc 12 15    -- 60
 
 ---
 
-## 📁 Estructura del proyecto
+## � Archivos y estructura / Files & Structure
 
 ```
 numbers/
@@ -180,7 +180,7 @@ numbers/
 
 ---
 
-## 🏗️ Concectos clave de Elm demostrados
+## 🏗️ Conceptos clave de Elm demostrados
 
 - **Pattern matching** en parámetros (`if … then … else …`)
 - **Tail recursion** con acumuladores
@@ -191,7 +191,15 @@ numbers/
 
 ---
 
-## 📚 Referencias
+## � Notas de implementación / Implementation Notes
+
+**ES:** La comparativa entre las tres versiones y la sección de conceptos de Elm cierran las decisiones de este módulo: `Rec` sigue la definición matemática, `Acc` lleva acumulador para la recursión de cola —que Elm no garantiza— e `Ite` resuelve con funciones internas `let ... in` sin crecer la pila. Las suites por enfoque y la combinación que aplica están documentadas en la sección de pruebas.
+
+**EN:** The comparison between the three versions and the Elm concepts section close this module's decisions: `Rec` follows the mathematical definition, `Acc` carries an accumulator for tail recursion —which Elm does not guarantee— and `Ite` resolves with internal `let ... in` functions without growing the stack. The per-approach suites and the combination that applies are documented in the tests section.
+
+---
+
+## 📚 Referencias / References
 
 - [Elm — Functions](https://elm-lang.org/docs/syntax#functions)
 - [Elm — let expressions](https://elm-lang.org/docs/syntax#let-expressions)
