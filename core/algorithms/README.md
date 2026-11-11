@@ -14,6 +14,7 @@ Los módulos de esta fase trabajan sobre listas de Elm (`List Int`), que son inm
 |----------|---------------|-----------------|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `case` + pattern matching sobre listas, recursión estructural, tuplas como retorno múltiple, privacidad vía `exposing`, `elm-test` |
 | [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | Tipos algebraicos recursivos, `Node` compartido, `LinkedList`/`Stack`/`Queue` inmutables, `Maybe ( Int, Stack )` en extracción, `elm-test` (`cd data_structures_basics && elm-test`) |
+| [`data_structures_advanced/`](data_structures_advanced/) | [07_Data_Structures_Advanced](https://yorche3.github.io/programming_languages/core/algorithms/07_Data_Structures_Advanced/) | Tipos algebraicos recursivos e inmutables, composición de nodo base (`Node`), `TreeNode`/`BinaryTree` (BST con recorridos y borrado de dos hijos), `GraphNode`/`Graph` (registro de vértices y adyacencias ordenadas manuales), `elm-test` (`cd data_structures_advanced && elm-test`) |
 
 ---
 
@@ -23,12 +24,14 @@ Los módulos de esta fase trabajan sobre listas de Elm (`List Int`), que son inm
 graph LR
     D["foundations/numbers<br/>Rec / Acc / Ite"] -->|"recursión + pattern matching"| A["algorithms/naive_sort<br/>selection / bubble / insertion"]
     A -->|"ADT sobre listas"| B["algorithms/data_structures_basics<br/>LinkedList / Stack / Queue"]
+    B -->|"árboles y grafos con ADT"| C["algorithms/data_structures_advanced<br/>BinaryTree / Graph"]
 ```
 
 | Paso | Proyecto | Aprendes |
 |------|----------|----------|
 | **1** | `naive_sort` | `case` con pattern matching sobre listas, recursión en lugar de bucles, bandera `swapped` devuelta como valor, privacidad declarada en `exposing` |
 | **2** | `data_structures_basics` | Tipos algebraicos recursivos como nodos enlazados, estructuras inmutables, `Maybe` para extracciones fallidas |
+| **3** | `data_structures_advanced` | ADT recursivos jerárquicos (`TreeNode`/`BinaryTree`), composición de nodo base, grafos dirigidos con adyacencias canónicas ordenadas |
 
 ---
 
@@ -56,6 +59,9 @@ npm install -g elm-test
 | `elm-test` | `naive_sort` | `describe`, `test`, `Expect.equal`; 21 tests |
 | Tipos algebraicos recursivos | `data_structures_basics` | `Node`, `LinkedList`, `Stack` y `Queue` enlazados a mano, sin `List` ni `Dict` |
 | `Maybe` con tupla | `data_structures_basics` | `stackPop` y `queueDequeue` devuelven `Maybe ( Int, estructura )` |
+| Composición de nodo base | `data_structures_advanced` | `TreeNode` y `GraphNode` reutilizan el tipo base `Node` embebiendo el valor |
+| Árbol binario de búsqueda | `data_structures_advanced` | ADT recursivo `BinaryTree` con recorridos (in-order, pre-order, post-order) y borrado con reemplazo por sucesor in-order |
+| Grafo dirigido enlazado | `data_structures_advanced` | `Graph` y `GraphNode` con adyacencias canónicas ordenadas y sin hash/sets de biblioteca |
 
 ---
 
@@ -76,6 +82,13 @@ algorithms/
     │   └── DataStructuresBasics.elm
     ├── tests/
     │   └── DataStructuresBasicsTest.elm
+    └── README.md
+└── data_structures_advanced/
+    ├── elm.json
+    ├── src/
+    │   └── DataStructuresAdvanced.elm
+    ├── tests/
+    │   └── DataStructuresAdvancedTest.elm
     └── README.md
 ```
 
