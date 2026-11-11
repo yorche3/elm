@@ -22,7 +22,8 @@ elm/
     │   └── numbers/       # 15 funciones — Rec / Acc / Ite
     └── algorithms/        # Algoritmos puros
         ├── naive_sort/    # Selection / Bubble / Insertion — elm-test
-        └── data_structures_basics/  # LinkedList / Stack / Queue — elm-test
+        ├── data_structures_basics/  # LinkedList / Stack / Queue — elm-test
+        └── data_structures_advanced/  # BinaryTree / Graph — elm-test
 ```
 
 ---
@@ -37,6 +38,7 @@ elm/
 | Numbers | [`core/foundations/numbers/`](core/foundations/numbers/) | Recursión pura, tail recursion, funciones internas, GCD/LCM | ✅ Completado |
 | Naive Sort | [`core/algorithms/naive_sort/`](core/algorithms/naive_sort/) | Pattern matching sobre listas, recursión estructural, bandera `swapped` como valor de retorno | ✅ Completado |
 | Data Structures Basics | [`core/algorithms/data_structures_basics/`](core/algorithms/data_structures_basics/) | Tipos algebraicos recursivos, `Node` compartido, `LinkedList`/`Stack`/`Queue` inmutables, `Maybe` en extracciones | ✅ Completado |
+| Data Structures Advanced | [`core/algorithms/data_structures_advanced/`](core/algorithms/data_structures_advanced/) | ADT recursivos jerárquicos, composición de `Node`, `TreeNode`/`BinaryTree` (BST), `GraphNode`/`Graph` (adyacencias canónicas ordenadas) | ✅ Completado |
 
 ---
 
@@ -46,7 +48,7 @@ elm/
 # Instalar Elm CLI
 npm install -g elm
 
-# Instalar elm-test (para unit_test, numbers, naive_sort y data_structures_basics)
+# Instalar elm-test (para unit_test, numbers, naive_sort, data_structures_basics y data_structures_advanced)
 npm install -g elm-test
 ```
 
@@ -93,6 +95,13 @@ elm-test
 
 ```bash
 cd core/algorithms/data_structures_basics
+elm-test
+```
+
+### Data Structures Advanced (tests)
+
+```bash
+cd core/algorithms/data_structures_advanced
 elm-test
 ```
 
