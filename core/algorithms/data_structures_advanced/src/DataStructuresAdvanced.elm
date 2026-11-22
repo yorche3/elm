@@ -297,7 +297,7 @@ graphAddEdge u v ((Graph vertices vertexTotal edgeTotal) as graph) =
                 currentNeighbors =
                     graphNodeNeighbors uNode
             in
-            if List.member v currentNeighbors then
+            if hasNeighbor v currentNeighbors then
                 Just graph
 
             else
@@ -321,9 +321,19 @@ graphHasEdge : Int -> Int -> Graph -> Bool
 graphHasEdge u v (Graph vertices _ _) =
     case findVertex u vertices of
         Just uNode ->
-            List.member v (graphNodeNeighbors uNode)
+            hasNeighbor v (graphNodeNeighbors uNode)
         Nothing ->
             False
+
+{-| Recorrido manual de la adyacencia: se compara elemento a elemento. -}
+hasNeighbor : Int -> List Int -> Bool
+hasNeighbor label neighbors =
+    case neighbors of
+        [] ->
+            False
+
+        first :: rest ->
+            (label == first) || hasNeighbor label rest
 
 insertSorted : Int -> List Int -> List Int
 insertSorted value list =
